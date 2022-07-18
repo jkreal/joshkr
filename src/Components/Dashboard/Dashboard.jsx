@@ -1,25 +1,23 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
-import {Sidebar, SidebarButton} from "./Sidebar";
-import Header from "./Header";
+import { Sidebar, SidebarButton } from "./Sidebar";
+import { Header }from "./Header";
 import Footer from "./Footer";
 import Content from "./Content";
-
 
 import { Container, Row, Col } from "react-bootstrap";
 
 class Dashboard extends React.Component {
-    constructor(){
-        super();
-        this.state = {mobileView: 0, showSidebar: false};
+  constructor() {
+    super();
+    this.state = { mobileView: 0, showSidebar: false };
 
-        this.toggleSidebar = this.toggleSidebar.bind(this);
-    }
+    this.toggleSidebar = this.toggleSidebar.bind(this);
+  }
 
   componentDidMount() {
     this.updateViewState();
     window.addEventListener("resize", this.resize.bind(this));
-    
   }
 
   resize() {
@@ -27,7 +25,7 @@ class Dashboard extends React.Component {
   }
 
   toggleSidebar() {
-    this.setState({showSidebar: !this.state.showSidebar});
+    this.setState({ showSidebar: !this.state.showSidebar });
   }
 
   updateViewState() {
@@ -87,17 +85,22 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <Container className="dashboard">
+      <Container fluid className="dashboard">
         <Row>
           <Col>
             <Header />
           </Col>
         </Row>
+        <Row>{/* Navbar */}</Row>
         <Row>
-          <Col md lg="3">
-            {this.state.showSidebar ? <Sidebar toggle={this.toggleSidebar}/> : <SidebarButton toggle={this.toggleSidebar}/>}
+          <Col>
+            {this.state.showSidebar ? (
+              <Sidebar toggle={this.toggleSidebar} />
+            ) : (
+              <SidebarButton toggle={this.toggleSidebar} />
+            )}
           </Col>
-          <Col md lg="9">
+          <Col>
             <Content />
           </Col>
         </Row>
