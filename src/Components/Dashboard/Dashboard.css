@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "RobotoSlab";
+    src: url('../../Assets/Fonts/RobotoSlab.ttf');
+}
+
+* {
+    font-family: 'RobotoSlab';
+}
+
+.dashboard{
+    width: 100%;
+    background-color: red;
+    height: 100vh;
+
+    border-radius: 20px;
+}
+
+.footer {
+    height: 10vh;
+    background-color: blue;
+    margin: auto;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.sidebar {
+    min-height: 80vh;
+    left: 0;
+    background-color: purple;
+
+    border-radius: 30px;
+}
+
+.sidebar-title {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.header{
+    height: 10vh;
+}
+
+.header-title {
+    font-family: 'RobotoSlab';
+    background-color: aliceblue;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.content {
+    min-height: 80vh;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.footer-title {
+    background-color: aliceblue;
+    width: 20%;
+    margin: auto;
+}
