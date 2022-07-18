@@ -20,7 +20,7 @@ function App() {
         </a>
       </header> */}
 
-      <Dashboard/>
+      <Dashboard />
     </div>
   );
 }
