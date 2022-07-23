@@ -1,0 +1,49 @@
+/* Phone in Portrait mode */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* Phone in landscape mode */
+@media screen and (min-width: 601px) and (max-width: 1000px) and (max-height: 500px) {
+  body {
+    background-color: violet;
+  }
+}
+
+/* iPad/tablet in Portrait mode */
+@media screen and (min-width: 601px) and (max-width: 1000px) and (min-height: 501px) {
+  body {
+    background-color: orangered;
+  }
+}
+
+/* iPad/Tablet in Landscape mode */
+@media screen and (min-width: 1000px) and (min-height: 768px) {
+  body {
+    background-color: olive;
+  }
+}
+
+/* Desktop, sub 1080p */
+@media screen and (min-width: 1000px) and (min-height: 900px) {
+  body {
+    background-color: red;
+  }
+}
+
+/* Desktop, 1080p */
+@media screen and (min-width: 1900px) and (min-height: 900px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* Desktop, 2k and above */
+
+@media screen and (min-width: 2000px) and (min-height: 1000px) {
+    body {
+      background-color: purple;
+    }
+  }

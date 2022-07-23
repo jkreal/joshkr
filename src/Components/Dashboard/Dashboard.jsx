@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Dashboard.css";
+import "./DashboardQueries.css";
 import { Sidebar, SidebarButton } from "./Sidebar";
 import { Header }from "./Header";
 import Footer from "./Footer";
