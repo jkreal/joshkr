@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 function SidebarButton(props) {
     return ( <div className="sidebar-button">
-        <Button onClick={props.toggle}>Button</Button>
+        <Button onClick={props.toggle}>Sidebar</Button>
     </div> );
 }
 

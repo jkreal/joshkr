@@ -14,7 +14,7 @@ class Sidebar extends Component {
     render() { 
         return (<div className="sidebar">
             <div className="sidebar-title"><h1>Sidebar</h1></div>
-            <SidebarButton toggle={this.props.toggle}/>
+            {/* <SidebarButton toggle={this.props.toggle}/> */}
         </div>);
     }
 }

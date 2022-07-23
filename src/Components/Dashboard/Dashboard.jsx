@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Dashboard.css";
 import "./DashboardQueries.css";
 import { Sidebar, SidebarButton } from "./Sidebar";
-import { Header }from "./Header";
+import { Header } from "./Header";
 import Footer from "./Footer";
 import Content from "./Content";
 
@@ -44,7 +44,7 @@ class Dashboard extends React.Component {
     } else if (xwidth > 600 && xwidth < 1000 && yheight < 500) {
       this.setState({
         mobileView: 1,
-        showSidebar: false,
+        showSidebar: true,
       });
       //iPad/Tablet in portrait mode
     } else if (xwidth > 600 && xwidth < 1000 && yheight > 500) {
@@ -92,19 +92,77 @@ class Dashboard extends React.Component {
             <Header />
           </Col>
         </Row>
-        <Row>{/* Navbar */}</Row>
-        <Row>
-          <Col>
-            {this.state.showSidebar ? (
+
+        {this.state.mobileView === 0 || this.state.mobileView === 2 ? (
+          this.state.showSidebar === true ? (
+            <div className="portrait-mode">
+              <Row>
+                <Col>
+                  <SidebarButton toggle={this.toggleSidebar} />
+                  <Sidebar />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Content />
+                </Col>
+              </Row>
+            </div>
+          ) : (
+            <div className="portrait-mode">
+              <Row>
+                <Col>
+                  <SidebarButton toggle={this.toggleSidebar} />
+                  <Content />
+                </Col>
+              </Row>
+            </div>
+          )
+        ) : this.state.mobileView === 1 || this.state.mobileView === 3 ? (
+          this.state.showSidebar === true ? (
+            <div className="landscape-mode">
+              <Row>
+                <Col sm md={3}>
+                  <SidebarButton toggle={this.toggleSidebar} />
+                  <Sidebar />
+                </Col>
+                <Col sm md={9}>
+                  <Content />
+                </Col>
+              </Row>
+            </div>
+          ) : (
+            <div className="landscape-mode">
+              <Row>
+                <Col>
+                  <SidebarButton toggle={this.toggleSidebar} />
+                  <Content/>
+                </Col>
+              </Row>
+            </div>
+          )
+        ) : (
+          ""
+        )}
+
+        {/* <Row>
+          {this.state.showSidebar ? (
+            <Col>
               <Sidebar toggle={this.toggleSidebar} />
-            ) : (
-              <SidebarButton toggle={this.toggleSidebar} />
-            )}
-          </Col>
+            </Col>
+          ) : (
+            <Row>
+              <Col>
+                <SidebarButton toggle={this.toggleSidebar} />{" "}
+              </Col>
+            </Row>
+          )}
+
           <Col>
             <Content />
           </Col>
-        </Row>
+        </Row> */}
+
         <Row>
           <Footer />
         </Row>
