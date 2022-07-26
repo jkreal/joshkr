@@ -10,3 +10,15 @@
 .slide-enter.slide-enter-active {
   transform: translateX(0%);
 }
+
+.slide-exit {
+  position: absolute;
+  top: 200em;
+  left: 200em;
+  width: 100%;
+  transform: translateX(0%);
+}
+
+.slide-exit-active {
+  transform: translateX(-200%);
+}
