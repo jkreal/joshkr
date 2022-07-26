@@ -6,6 +6,7 @@
 * {
   font-family: "RobotoSlab";
   margin: 0;
+  
 }
 
 body {
@@ -87,6 +88,8 @@ body {
   margin: auto;
 
   border-bottom-right-radius: 14px;
+  text-decoration-color: black;
+  font-size: 1.33em;
 }
 
 .content {
@@ -127,4 +130,10 @@ body {
 .desktop-1080 {
   margin-left: 15em;
   margin-right: 15em;
+}
+
+.content-header{
+  border-bottom: 3px solid black;
+  width: 50%;
+  margin: auto;
 }

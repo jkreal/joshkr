@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Row, Col } from "react-bootstrap";
-import cat from "../../../Assets/Pics/cat-gray.gif"
+
 
 import { Home, Code, Games, Socials } from "../Content";
 
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 class Content extends Component {
     state = {  } 

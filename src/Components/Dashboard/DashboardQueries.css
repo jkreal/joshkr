@@ -28,7 +28,6 @@
     margin: auto;
     width: 100%;
     min-height: 60vh;
-
   }
 
   .sidebar {
@@ -40,11 +39,15 @@
   }
 
   .link {
-    width: 3.5em;
+    width: 5em;
   }
 
   .header-title {
     width: 100%;
+  }
+
+  .footer {
+    position: absolute;
   }
 }
 

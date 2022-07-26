@@ -18,6 +18,7 @@ class Header extends Component {
               <Link
                 className="link"
                 to={link.toLowerCase() === "home" ? "/" : link.toLowerCase()}
+                key={i + "-nav"}
               >
                 {link}
               </Link>

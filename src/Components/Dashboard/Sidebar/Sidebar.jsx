@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SidebarContent from "../Sidebar/SidebarContent.jsx";
+import Login from "../Sidebar/Login.jsx";
 
 class Sidebar extends Component {
   constructor() {
@@ -15,11 +16,7 @@ class Sidebar extends Component {
         <div className="sidebar-title">
           <h1>Sidebar</h1>
         </div>
-        <SidebarContent content={"This is sidebar content!"}/>
-        <SidebarContent content={"This is sidebar content!"}/>
-        <SidebarContent content={"This is sidebar content!"}/>
-        <SidebarContent content={"This is sidebar content!"}/>
-        {/* <SidebarButton toggle={this.props.toggle}/> */}
+        <Login/>
       </div>
     );
   }
