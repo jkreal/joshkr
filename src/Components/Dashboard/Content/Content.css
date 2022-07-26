@@ -13,8 +13,8 @@
 
 .slide-exit {
   position: absolute;
-  top: 200em;
-  left: 200em;
+  top: -200em;
+  left: -200em;
   width: 100%;
   transform: translateX(0%);
 }
