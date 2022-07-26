@@ -112,9 +112,19 @@ body {
 .sidebar-content {
   border: 1px solid black;
   margin: auto;
-  margin-top: .4em;
+  margin-top: 0.4em;
   background-color: aliceblue;
   min-height: 10vh;
 
   width: 95%;
+}
+
+.desktop-2kplus {
+  margin-left: 20em;
+  margin-right: 20em;
+}
+
+.desktop-1080 {
+  margin-left: 15em;
+  margin-right: 15em;
 }

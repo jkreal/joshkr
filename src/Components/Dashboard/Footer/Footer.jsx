@@ -6,6 +6,7 @@ class Footer extends Component {
         return (<div className="footer">
             <div className="footer-title">
                 <h1>Footer</h1>
+                <h2>©2022 Joshua K R</h2>
             </div>
         </div>);
     }

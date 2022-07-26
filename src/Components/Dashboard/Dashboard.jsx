@@ -32,7 +32,14 @@ class Dashboard extends React.Component {
   updateViewState() {
     let xwidth = document.documentElement.clientWidth;
     let yheight = document.documentElement.clientHeight;
-    console.log("the viewport is " + xwidth + "px by " + yheight + "px");
+    console.log(
+      "the viewport is " +
+        xwidth +
+        "px by " +
+        yheight +
+        "px, resulting in mobileView: " +
+        this.state.mobileView
+    );
 
     // Phone in portrait mode
     if (xwidth < 600) {
@@ -53,7 +60,7 @@ class Dashboard extends React.Component {
         showSidebar: true,
       });
       //iPad/Tablet in Landscape mode
-    } else if (xwidth > 992 && yheight < 992) {
+    } else if (xwidth > 992 && xwidth < 1200 && yheight < 992) {
       this.setState({
         mobileView: 3,
         showSidebar: true,
@@ -70,7 +77,7 @@ class Dashboard extends React.Component {
         showSidebar: true,
       });
       // Desktop/Laptop 1080p
-    } else if (xwidth > 1901 && xwidth < 2500) {
+    } else if (xwidth > 1800 && yheight < 1000) {
       this.setState({
         mobileView: 5,
         showSidebar: true,
@@ -93,8 +100,10 @@ class Dashboard extends React.Component {
           </Col>
         </Row>
 
+        {/* The following will render on a phone in portrait mode */}
         {this.state.mobileView === 0 ? (
           this.state.showSidebar === true ? (
+            // If show sidebar, this will render
             <div className="portrait-mode">
               <Row>
                 <Col>
@@ -109,6 +118,7 @@ class Dashboard extends React.Component {
               </Row>
             </div>
           ) : (
+            // If NOT show sidebar, this will render
             <div className="portrait-mode">
               <Row>
                 <Col>
@@ -118,12 +128,14 @@ class Dashboard extends React.Component {
               </Row>
             </div>
           )
-        ) : this.state.mobileView === 1 || this.state.mobileView === 3 || this.state.mobileView === 2 ? (
-          this.state.showSidebar === true ? (
+        ) : // The following will render on phones in landscape mode, as well as tablets in any mode
+        this.state.mobileView === 1 ||
+          this.state.mobileView === 3 ||
+          this.state.mobileView === 2 ||
+          this.state.mobileView === 4 ? (
             <div className="landscape-mode">
               <Row>
                 <Col sm md={3}>
-                  <SidebarButton toggle={this.toggleSidebar} />
                   <Sidebar />
                 </Col>
                 <Col sm md={9}>
@@ -131,18 +143,30 @@ class Dashboard extends React.Component {
                 </Col>
               </Row>
             </div>
-          ) : (
-            <div className="landscape-mode">
-              <Row>
-                <Col>
-                  <SidebarButton toggle={this.toggleSidebar} />
-                  <Content/>
-                </Col>
-              </Row>
-            </div>
-          )
+        ) : // This will render if the screen size is 1080p
+        this.state.mobileView === 5 ? (
+          <div className="desktop-1080">
+            <Row>
+              <Col md lg={2}>
+                <Sidebar />
+              </Col>
+              <Col md lg={10}>
+                <Content />
+              </Col>
+            </Row>
+          </div>
         ) : (
-          ""
+          // This will render if the screen size is above 1080p (2k, 4k, etc.)
+          <div className="desktop-2kplus">
+            <Row>
+              <Col md lg={2}>
+                <Sidebar />
+              </Col>
+              <Col md lg={10}>
+                <Content />
+              </Col>
+            </Row>
+          </div>
         )}
 
         {/* <Row>
