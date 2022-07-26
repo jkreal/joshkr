@@ -93,7 +93,7 @@ class Dashboard extends React.Component {
           </Col>
         </Row>
 
-        {this.state.mobileView === 0 || this.state.mobileView === 2 ? (
+        {this.state.mobileView === 0 ? (
           this.state.showSidebar === true ? (
             <div className="portrait-mode">
               <Row>
@@ -118,7 +118,7 @@ class Dashboard extends React.Component {
               </Row>
             </div>
           )
-        ) : this.state.mobileView === 1 || this.state.mobileView === 3 ? (
+        ) : this.state.mobileView === 1 || this.state.mobileView === 3 || this.state.mobileView === 2 ? (
           this.state.showSidebar === true ? (
             <div className="landscape-mode">
               <Row>

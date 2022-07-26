@@ -42,6 +42,10 @@
   .link {
     width: 3.5em;
   }
+
+  .header-title {
+    width: 100%;
+  }
 }
 
 /* Phone in landscape mode */
@@ -61,7 +65,7 @@
   }
 
   .link {
-    width: 7em;
+    width: 5em;
   }
 }
 
